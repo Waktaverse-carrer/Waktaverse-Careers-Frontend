@@ -76,16 +76,24 @@ const ImageContainer = styled.div`
 
 const DesktopImage = styled.div`
   position: absolute;
-  right: 13rem;
+  right: 12vw;
   bottom: 0;
   flex: 1;
+
+  & img {
+    width: 44vw;
+  }
 `;
 
 const MobileImage = styled.div`
   position: absolute;
-  right: 3rem;
+  right: 4vw;
   bottom: 0;
   flex: 1;
+
+  & img {
+    width: 28vw;
+  }
 `;
 
 export default function FirstSection() {
@@ -146,22 +154,10 @@ export default function FirstSection() {
         </TextContainer>
         <ImageContainer>
           <DesktopImage>
-            <Image
-              src='/images/landing_section1_web.png'
-              alt='Desktop Screenshot'
-              width={751}
-              height={653}
-              priority
-            />
+            <img src='/images/landing_section1_web.png' alt='Desktop Screenshot' />
           </DesktopImage>
           <MobileImage>
-            <Image
-              src='/images/landing_section1_mobile.png'
-              alt='Mobile Screenshot'
-              width={569}
-              height={488}
-              priority
-            />
+            <img src='/images/landing_section1_mobile.png' alt='Mobile Screenshot' />
           </MobileImage>
         </ImageContainer>
       </Content>
