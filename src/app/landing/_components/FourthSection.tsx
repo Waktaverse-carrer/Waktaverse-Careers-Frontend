@@ -40,11 +40,9 @@ const RightWall = styled.div`
 const Slider = styled(motion.div)`
   display: flex;
   gap: 3%;
-  flex-wrap: nowrap;
 `;
 
 const IconWrapper = styled.div`
-  width: 10em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,9 +94,9 @@ export default function FourthSection() {
           <Image src='/images/left_shadow.png' alt='leftShadow' width={50} height={400} />
         </LeftWall>
         <Slider
-          animate={{ x: ['-50%', '0.6%'] }}
+          animate={{ translateX: ['-86%', '0%'] }}
           transition={{
-            duration: 15,
+            duration: 10,
             ease: 'linear',
             repeat: Infinity,
           }}
