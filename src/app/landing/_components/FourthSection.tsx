@@ -39,7 +39,7 @@ const RightWall = styled.div`
 
 const Slider = styled(motion.div)`
   display: flex;
-  gap: 2vw;
+  gap: 3%;
   flex-wrap: nowrap;
 `;
 
