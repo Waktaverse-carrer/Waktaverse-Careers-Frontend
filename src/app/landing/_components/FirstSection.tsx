@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import arrowForward from '../../../../public/arrow_forward.svg';
+import Link from 'next/link';
 
 const Section = styled.div`
   position: relative;
@@ -23,6 +25,8 @@ const Content = styled.div`
 `;
 
 const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 2;
   color: #ffffff;
 `;
@@ -51,6 +55,19 @@ const AnimationTitle = styled(motion.h1)`
   transform-origin: left;
 `;
 
+const CTA = styled.div`
+  position: relative;
+  top: 8rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const LinkArea = styled(Link)`
+  text-decoration: none;
+`;
+
 const ImageContainer = styled.div`
   display: flex;
   flex: 1;
@@ -76,49 +93,56 @@ export default function FirstSection() {
     <Section>
       <Content>
         <TextContainer>
-          <Title>슬기로운 왁타버스 작업계 생활!</Title>
-          <Title>
-            <AnimationBox
-              animate={{
-                backgroundPosition: [
-                  '200% 200%',
-                  '200% 200%',
-                  '200% 200%',
-                  '100% 100%',
-                  '100% 100%',
-                  '100% 100%',
-                  '0% 0%',
-                  '0% 0%',
-                  '0% 0%',
-                ],
-              }}
-              transition={{
-                duration: 3,
-              }}
-            >
-              <AnimationTitle
+          <div>
+            <Title>슬기로운 왁타버스 작업계 생활!</Title>
+            <Title>
+              <AnimationBox
                 animate={{
                   backgroundPosition: [
                     '200% 200%',
                     '200% 200%',
                     '200% 200%',
-                    '200% 200%',
-                    '200% 200%',
-                    '200% 200%',
                     '100% 100%',
                     '100% 100%',
                     '100% 100%',
+                    '0% 0%',
+                    '0% 0%',
+                    '0% 0%',
                   ],
                 }}
                 transition={{
                   duration: 3,
                 }}
               >
-                왁타버스 커리어즈
-              </AnimationTitle>
-            </AnimationBox>
-            와 함께
-          </Title>
+                <AnimationTitle
+                  animate={{
+                    backgroundPosition: [
+                      '200% 200%',
+                      '200% 200%',
+                      '200% 200%',
+                      '200% 200%',
+                      '200% 200%',
+                      '200% 200%',
+                      '100% 100%',
+                      '100% 100%',
+                      '100% 100%',
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                  }}
+                >
+                  왁타버스 커리어즈
+                </AnimationTitle>
+              </AnimationBox>
+              와 함께
+            </Title>
+          </div>
+          <CTA>
+            <LinkArea href={'./landing'} passHref={true}>
+              시작하기 <Image src={arrowForward} alt='next' width={9} />
+            </LinkArea>
+          </CTA>
         </TextContainer>
         <ImageContainer>
           <DesktopImage>
