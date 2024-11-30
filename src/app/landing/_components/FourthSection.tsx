@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import CounterAnimation from './CountAnimation';
-import { motion } from 'framer-motion';
+import { motion, animate } from 'framer-motion';
 
 const Section = styled.div`
   height: 100vh;
@@ -20,6 +20,7 @@ const IconsContainer = styled.div`
   position: relative;
   display: flex;
   width: 80%;
+  height: 20vh;
   margin-bottom: 2rem;
   flex-wrap: nowrap;
   overflow: hidden;
@@ -36,20 +37,25 @@ const RightWall = styled.div`
   right: -10px;
 `;
 
+const Slider = styled(motion.div)`
+  display: flex;
+  gap: 2vw;
+  flex-wrap: nowrap;
+`;
+
 const IconWrapper = styled.div`
+  width: 10em;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const Slider = styled(motion.div)`
-  display: flex;
-  gap: 4rem;
-  width: fit-content;
-  flex-wrap: nowrap;
+const ResponsiveImage = styled.img`
+  height: 60%;
 `;
 
 const TextContainer = styled.div`
+  width: 16%;
   text-align: center;
   color: #ffffff;
 `;
@@ -99,7 +105,7 @@ export default function FourthSection() {
         >
           {[...images, ...images].map((src, index) => (
             <IconWrapper key={index}>
-              <img src={src} alt={`Logo ${index}`} />
+              <ResponsiveImage src={src} alt={`Logo ${index}`} />
             </IconWrapper>
           ))}
         </Slider>
