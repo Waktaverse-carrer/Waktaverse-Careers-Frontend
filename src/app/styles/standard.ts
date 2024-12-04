@@ -1,5 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+'use client';
+
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -109,7 +111,7 @@ export const standard = {
         | 800
         | 900
         | 950
-        | "gradient"
+        | 'gradient'
     ) => `var(--color-main-${color})`,
     grey: (
       color: 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950
@@ -127,7 +129,7 @@ export const standard = {
       color: 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950
     ) => `var(--color-blue-${color})`,
     isedol: (
-      member: "ine" | "jingburger" | "lilpa" | "jururu" | "gosegu" | "viichan"
+      member: 'ine' | 'jingburger' | 'lilpa' | 'jururu' | 'gosegu' | 'viichan'
     ) => `var(--color-isedol-${member})`,
   },
 };
