@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Layout from './_components/Layout';
 import Button from './_components/Button';
+import Tag from './_components/Tag';
 
 const Content = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ const ProfileText = styled.div`
 
 const User = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   font-size: 22px;
   font-weight: bold;
 `;
@@ -66,6 +67,7 @@ const Container = styled.div`
   height: 60vh;
   background-color: #f0f0f0;
   border-radius: 10px;
+  position: relative;
 `;
 
 const Description = styled.div`
@@ -90,6 +92,11 @@ const DescriptionContent = styled.div`
   margin-bottom: 32px;
 `;
 
+const Tags = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
 export default function Home() {
   return (
     <Layout>
@@ -110,14 +117,20 @@ export default function Home() {
           </Buttons>
         </TitleLine>
         <Article>
-          <Container>컨테이너</Container>
+          <Container>
+            <Image src='/images/template_image.png' alt='탬플릿' fill />
+          </Container>
           <Description>
             <View>9,999조회 99찜</View>
             <DescriptionTitle>템플릿 설명</DescriptionTitle>
             <DescriptionContent>
               모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이
             </DescriptionContent>
-            <div>태그's</div>
+            <Tags>
+              <Tag text='비챤' />
+              <Tag text='크레딧' />
+              <Tag text='일러스트' />
+            </Tags>
           </Description>
         </Article>
       </Content>
