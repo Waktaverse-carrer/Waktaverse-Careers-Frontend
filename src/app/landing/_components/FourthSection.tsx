@@ -7,7 +7,10 @@ import CounterAnimation from './CountAnimation';
 import { motion, animate } from 'framer-motion';
 
 const Section = styled.div`
+  width: 100%;
+  min-width: 2220px;
   height: 100vh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +99,7 @@ export default function FourthSection() {
         <Slider
           animate={{ translateX: ['-86%', '0%'] }}
           transition={{
-            duration: 10,
+            duration: 20,
             ease: 'linear',
             repeat: Infinity,
           }}

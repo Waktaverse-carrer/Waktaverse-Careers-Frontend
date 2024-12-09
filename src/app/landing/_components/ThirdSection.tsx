@@ -6,7 +6,10 @@ import styled from 'styled-components';
 import CounterAnimation from './CountAnimation';
 
 const Section = styled.div`
+  width: 100%;
+  min-width: 2220px;
   height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,8 +21,8 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
   width: 100%;
+  padding: 0 10rem;
 `;
 
 const ImagesContainer = styled.div`
@@ -74,14 +77,14 @@ export default function ThirdSection() {
       <Content>
         <ImagesContainer>
           <LeftWall>
-            <Image src='/images/left_shadow.png' alt='leftShadow' width={50} height={400} />
+            <Image src='/images/left_shadow.png' alt='leftShadow' width={50} height={800} />
           </LeftWall>
           <ImageWrapper>
             <Image
               src='/images/landing_section3_img1.png'
               alt='Template 1'
-              width={160}
-              height={320}
+              width={320}
+              height={640}
               priority
             />
           </ImageWrapper>
@@ -89,8 +92,8 @@ export default function ThirdSection() {
             <Image
               src='/images/landing_section3_img2.png'
               alt='Template 2'
-              width={200}
-              height={400}
+              width={400}
+              height={800}
               priority
             />
           </ImageWrapper>
@@ -98,13 +101,13 @@ export default function ThirdSection() {
             <Image
               src='/images/landing_section3_img3.png'
               alt='Template 3'
-              width={160}
-              height={320}
+              width={320}
+              height={640}
               priority
             />
           </ImageWrapper>
           <RightWall>
-            <Image src='/images/right_shadow.png' alt='leftShadow' width={60} height={400} />
+            <Image src='/images/right_shadow.png' alt='leftShadow' width={60} height={800} />
           </RightWall>
         </ImagesContainer>
         <TextContainer>

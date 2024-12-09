@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.div`
+  width: 100%;
+  min-width: 2220px;
   height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +29,7 @@ const LogoContainer = styled.div`
 `;
 
 const ResponsiveImage = styled.img`
-  width: 40vw;
+  width: 631px;
 `;
 
 const TextContainer = styled.div`

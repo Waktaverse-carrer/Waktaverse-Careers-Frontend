@@ -3,6 +3,13 @@
 import { useEffect, useCallback, useState } from 'react';
 import Lenis from '@studio-freight/lenis';
 import useWheel from '@/app/lib/useWheel';
+import styled from 'styled-components';
+
+const Layout = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export interface Props {
   children: React.ReactNode;
@@ -65,8 +72,8 @@ export default function LenisScroll({ children }: Props) {
   const outerDivRef = useWheel(wheelHandler);
 
   return (
-    <main ref={outerDivRef} style={{ overflowY: 'hidden' }}>
+    <Layout ref={outerDivRef} style={{ overflowY: 'hidden' }}>
       {children}
-    </main>
+    </Layout>
   );
 }

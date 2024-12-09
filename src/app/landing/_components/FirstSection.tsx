@@ -7,6 +7,8 @@ import Link from 'next/link';
 
 const Section = styled.div`
   position: relative;
+  width: 100%;
+  min-width: 2220px;
   height: 100vh;
   min-height: 600px;
   display: flex;
@@ -76,12 +78,12 @@ const ImageContainer = styled.div`
 
 const DesktopImage = styled.div`
   position: absolute;
-  right: 12vw;
+  right: 12%;
   bottom: 0;
   flex: 1;
 
   & img {
-    width: 44vw;
+    width: 70rem;
   }
 `;
 
@@ -92,7 +94,7 @@ const MobileImage = styled.div`
   flex: 1;
 
   & img {
-    width: 28vw;
+    width: 50rem;
   }
 `;
 
