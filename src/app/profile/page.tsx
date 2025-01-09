@@ -2,6 +2,7 @@
 
 import Layout from "./_components/Layout";
 import Profile from "./_components/Profile";
+import Portfolio from "./_components/Portfolio";
 
 import styled from "styled-components";
 
@@ -10,11 +11,18 @@ const Home = () => {
   return (
     <Layout>
       <Profile />
+      <ProfileContent>
+        <Portfolio />
+      </ProfileContent>
     </Layout>
   );
 };
-
-const PortfolioContainer = styled.div``;
+const ProfileContent = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 74px;
+`;
 
 const MyTemplateContainer = styled.div``;
 
