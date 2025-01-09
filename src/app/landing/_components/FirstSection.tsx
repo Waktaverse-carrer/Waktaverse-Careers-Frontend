@@ -6,8 +6,9 @@ import arrowForward from '../../../../public/arrow_forward.svg';
 import Link from 'next/link';
 
 const Section = styled.div`
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
   min-width: 2220px;
   height: 100vh;
   min-height: 600px;
@@ -15,21 +16,29 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: #2c2c2e;
-  padding: 0 10rem;
+  padding: 0 5rem;
 `;
 
 const Content = styled.div`
+  position: relative;
+  flex: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
+  width: 80%;
+`;
+
+const Footer = styled.div`
+  flex: 1;
+  width: 100vw;
+  height: 100%;
+  background-color: #3a3a3c;
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 2;
+  flex: 1;
   color: #ffffff;
 `;
 
@@ -37,6 +46,7 @@ const Title = styled.h1`
   font-size: 3rem;
   font-weight: bold;
   margin: 0;
+  white-space: nowrap;
 `;
 
 const AnimationBox = styled(motion.div)`
@@ -78,24 +88,16 @@ const ImageContainer = styled.div`
 
 const DesktopImage = styled.div`
   position: absolute;
-  right: 12%;
+  right: 5.5vw;
   bottom: 0;
   flex: 1;
-
-  & img {
-    width: 70rem;
-  }
 `;
 
 const MobileImage = styled.div`
   position: absolute;
-  right: 4vw;
+  right: 0;
   bottom: 0;
   flex: 1;
-
-  & img {
-    width: 50rem;
-  }
 `;
 
 export default function FirstSection() {
@@ -149,20 +151,31 @@ export default function FirstSection() {
             </Title>
           </div>
           <CTA>
-            <LinkArea href={'./landing'} passHref={true}>
+            <LinkArea href={'./store'} passHref={true}>
               시작하기 <Image src={arrowForward} alt='next' width={9} />
             </LinkArea>
           </CTA>
         </TextContainer>
         <ImageContainer>
           <DesktopImage>
-            <img src='/images/landing_section1_web.png' alt='Desktop Screenshot' />
+            <Image
+              src='/images/landing_section1_web.png'
+              alt='Desktop Screenshot'
+              width={751}
+              height={653}
+            />
           </DesktopImage>
           <MobileImage>
-            <img src='/images/landing_section1_mobile.png' alt='Mobile Screenshot' />
+            <Image
+              src='/images/landing_section1_mobile.png'
+              alt='Mobile Screenshot'
+              width={569}
+              height={488}
+            />
           </MobileImage>
         </ImageContainer>
       </Content>
+      <Footer />
     </Section>
   );
 }
