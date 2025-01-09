@@ -42,7 +42,7 @@ const LikedTemplate = () => {
           <Template key={index}>
             <img src={data.src} alt="temp" />
             <div>
-              <div className="title">{data.title}</div>
+              <div className="name">{data.title}</div>
               <div className="date">최근 수정일 {data.recentEdit}</div>
             </div>
           </Template>
@@ -95,7 +95,7 @@ const Template = styled.div`
     height: 205px;
     width: 100%;
   }
-  .title {
+  .name {
     font-size: 28px;
   }
   .date {

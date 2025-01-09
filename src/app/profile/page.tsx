@@ -5,6 +5,7 @@ import Profile from "./_components/Profile";
 import Portfolio from "./_components/Portfolio";
 import MyTemplate from "./_components/MyTemplate";
 import LikedTemplate from "./_components/LikedTemplate";
+import LikedUser from "./_components/LikedUser";
 
 import styled from "styled-components";
 
@@ -17,6 +18,7 @@ const Home = () => {
         <Portfolio />
         <MyTemplate />
         <LikedTemplate />
+        <LikedUser />
       </ProfileContent>
     </Layout>
   );
@@ -27,11 +29,5 @@ const ProfileContent = styled.div`
   flex-direction: column;
   gap: 74px;
 `;
-
-const MyTemplateContainer = styled.div``;
-
-const LikedTemplateContainer = styled.div``;
-
-const LikedUserContainer = styled.div``;
 
 export default Home;
