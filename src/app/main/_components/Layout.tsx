@@ -1,3 +1,4 @@
+import { SessionProvider } from 'next-auth/react';
 import styled from 'styled-components';
 
 const Layout = styled.div`
@@ -11,5 +12,9 @@ interface Props {
 }
 
 export default function ({ children }: Props) {
-  return <Layout>{children}</Layout>;
+  return (
+    <SessionProvider>
+      <Layout>{children}</Layout>
+    </SessionProvider>
+  );
 }
