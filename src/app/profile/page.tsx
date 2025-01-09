@@ -3,6 +3,8 @@
 import Layout from "./_components/Layout";
 import Profile from "./_components/Profile";
 import Portfolio from "./_components/Portfolio";
+import MyTemplate from "./_components/MyTemplate";
+import LikedTemplate from "./_components/LikedTemplate";
 
 import styled from "styled-components";
 
@@ -13,6 +15,8 @@ const Home = () => {
       <Profile />
       <ProfileContent>
         <Portfolio />
+        <MyTemplate />
+        <LikedTemplate />
       </ProfileContent>
     </Layout>
   );
