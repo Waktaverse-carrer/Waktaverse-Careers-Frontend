@@ -40,7 +40,7 @@ const PortfolioContainer = styled.div`
 
     height: 700px;
     padding: 70px 66px;
-    border: 1px solid #ebebeb;
+    border: 3px solid #ebebeb;
     border-radius: 45px;
 
     .thumbnail {
