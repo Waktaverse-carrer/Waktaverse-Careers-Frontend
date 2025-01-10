@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const Portfolio = () => {
+  // 자신 일때와 다른 사람일때를 구분해야함
+  // 포트폴리오 있을 때와 없을 때를 구분해야함
+
   const isMyProfile = true;
   const isProtfolio = false;
 
