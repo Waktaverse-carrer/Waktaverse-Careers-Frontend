@@ -17,6 +17,12 @@ const Profile = () => {
         <div className="tags contact">
           <div>연락처</div> <div>연락처</div>
         </div>
+        <img
+          className="edit"
+          src="profileEdit.png"
+          alt="profileEdit"
+          onClick={() => alert("edit event")}
+        />
       </div>
     </ProfileContainer>
   );
@@ -26,9 +32,10 @@ export default Profile;
 
 const ProfileContainer = styled.div`
   display: flex;
-  width: 100%;
   justify-content: left;
+  position: relative;
 
+  width: 100%;
   gap: 49px;
   margin: 190px 0;
 
@@ -67,6 +74,16 @@ const ProfileContainer = styled.div`
         font-size: 18px;
         font-weight: 600;
       }
+    }
+
+    .edit {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
     }
   }
 `;
