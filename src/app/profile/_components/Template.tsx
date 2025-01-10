@@ -9,10 +9,17 @@ interface Props {
 const Template = ({ src, title, recentEdit }: Props) => {
   return (
     <TemplateContainer>
-      <img src={src} alt="temp" />
-      <div>
-        <div className="name">{title}</div>
-        <div className="date">최근 수정일 {recentEdit}</div>
+      <img src={src} alt="temp" className="thumbnail" />
+      <div className="content">
+        <div>
+          <div className="name">{title}</div>
+          <div className="date">최근 수정일 {recentEdit}</div>
+        </div>
+        <img
+          src="templateEdit.png"
+          alt="edit"
+          onClick={() => alert("edit event")}
+        />
       </div>
     </TemplateContainer>
   );
@@ -35,15 +42,24 @@ const TemplateContainer = styled.div`
 
   font-weight: 600;
 
-  img {
+  .thumbnail {
     height: 205px;
     width: 100%;
   }
-  .name {
-    font-size: 28px;
-  }
-  .date {
-    font-size: 17px;
-    color: #636366;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .name {
+      font-size: 28px;
+    }
+    .date {
+      font-size: 17px;
+      color: #636366;
+    }
+    img {
+      cursor: pointer;
+    }
   }
 `;
