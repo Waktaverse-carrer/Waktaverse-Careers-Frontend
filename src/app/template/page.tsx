@@ -105,7 +105,12 @@ export default function Home() {
           <div>
             <Title>제목</Title>
             <ProfileLine>
-              <Image src='/images/default_profile.png' alt='프로필' width={40} height={40} />
+              <Image
+                src='/images/default_profile.png'
+                alt='프로필'
+                width={40}
+                height={40}
+              />
               <ProfileText>
                 <User>애기뺑띠</User> <CreatedAt>2024.11.06등록</CreatedAt>
               </ProfileText>
@@ -127,9 +132,9 @@ export default function Home() {
               모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이모시깽이
             </DescriptionContent>
             <Tags>
-              <Tag text='비챤' />
-              <Tag text='크레딧' />
-              <Tag text='일러스트' />
+              <Tag type='isedol' text='비챤' />
+              <Tag type='none' text='크레딧' />
+              <Tag type='none' text='일러스트' />
             </Tags>
           </Description>
         </Article>
