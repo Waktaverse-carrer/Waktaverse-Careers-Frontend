@@ -8,8 +8,8 @@ import GoogleProvider from 'next-auth/providers/google';
 export const option: AuthOptions = {
   providers: [
     NaverProvider({
-      clientId: '',
-      clientSecret: '',
+      clientId: process.env.NAVER_CLIENT_ID as string,
+      clientSecret: process.env.NAVER_CLIENG_SECRET_KEY as string,
     }),
     GoogleProvider({
       clientId: '',
@@ -30,6 +30,7 @@ export const option: AuthOptions = {
     redirect({ url, baseUrl }) {
       if (url === baseUrl) return url;
       if (url.startsWith(baseUrl)) return url;
+
       return baseUrl;
     },
   },
