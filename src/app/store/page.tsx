@@ -15,7 +15,7 @@ interface TemplateType {
 
 const initialTemplateList = () => {
   const templateList: TemplateType[] = [];
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 300; i++) {
     templateList.push({
       title: `템플릿 ${i}`,
       tags: ['일러스트', '크레딧', '비챤'],
@@ -27,7 +27,11 @@ const initialTemplateList = () => {
 const Home = () => {
   const [search, setSearch] = useState<string>('');
   const [tags, setTags] = useState<string[]>(['일러스트', '크레딧', '비챤']);
-  const [activeTags, setActiveTags] = useState<string[]>([]);
+  const [activeTags, setActiveTags] = useState<string[]>([
+    '일러스트',
+    '크레딧',
+    '비챤',
+  ]);
   const [templateList, setTemplateList] = useState<TemplateType[]>(
     initialTemplateList()
   );
@@ -63,7 +67,11 @@ const StoreTitle = styled.div`
 `;
 
 const StoreContent = styled.div`
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
+  gap: 30px;
 `;
 
 export default Home;
