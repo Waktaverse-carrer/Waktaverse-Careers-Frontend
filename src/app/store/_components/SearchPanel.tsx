@@ -18,7 +18,7 @@ const SearchPanel = ({
   activeTags,
   setActiveTags,
 }: Props) => {
-  const [isTagOpen, setIsTagOpen] = useState<boolean>(false);
+  const [isTagOpen, setIsTagOpen] = useState<boolean>(true);
   const [isAddTag, setIsAddTag] = useState<boolean>(false);
   const [newTag, setNewTag] = useState<string>('');
 
