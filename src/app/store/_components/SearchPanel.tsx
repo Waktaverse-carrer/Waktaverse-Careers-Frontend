@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 interface Props {
   search: string;
-  setSearch: (search: string) => void;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
   tags: string[];
-  setTags: (tags: string[]) => void;
+  setTags: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const SearchPanel = ({ search, setSearch, tags, setTags }: Props) => {
@@ -18,6 +18,26 @@ const SearchPanel = ({ search, setSearch, tags, setTags }: Props) => {
 
   const handleChangeNewTag = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewTag(e.target.value);
+  };
+
+  const handleKeyDownNewTag = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      if (!newTag) return;
+      setTags((prev) => [...prev, newTag]);
+      setNewTag('');
+    }
+  };
+
+  const handleContextMenuNewTag = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (!newTag) return;
+    setTags((prev) => [...prev, newTag]);
+    setNewTag('');
+  };
+
+  const handleClickToggle = () => {
+    setNewTag('');
+    setIsAddTag((prev) => !prev);
   };
 
   return (
@@ -48,10 +68,12 @@ const SearchPanel = ({ search, setSearch, tags, setTags }: Props) => {
                 placeholder='태그 입력하기'
                 value={newTag}
                 onChange={handleChangeNewTag}
+                onKeyDown={handleKeyDownNewTag}
+                onContextMenu={handleContextMenuNewTag}
               />
             )}
           </div>
-          <button type='button' onClick={() => setIsAddTag((prev) => !prev)}>
+          <button type='button' onClick={handleClickToggle}>
             {!isAddTag ? '+ 태그 추가하기' : '+'}
           </button>
         </TagList>
@@ -77,18 +99,18 @@ const Search = styled.div`
   width: 100%;
   gap: 18px;
 
-  input {
-    width: 100%;
-    border: none;
-    padding-left: 50px;
-  }
-
   > * {
     cursor: pointer;
 
     background-color: var(--color-grey-50);
     color: var(--color-grey-600);
     border-radius: 10px;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    padding-left: 50px;
   }
 
   > div {
