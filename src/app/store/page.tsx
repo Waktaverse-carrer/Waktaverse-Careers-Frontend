@@ -10,6 +10,11 @@ import styled from 'styled-components';
 const Home = () => {
   const [search, setSearch] = useState<string>('');
   const [tags, setTags] = useState<string[]>(['일러스트', '크레딧', '비챤']);
+  const [activeTags, setActiveTags] = useState<string[]>([
+    '일러스트',
+    '크레딧',
+    '비챤',
+  ]);
 
   return (
     <Layout>
@@ -18,7 +23,9 @@ const Home = () => {
         <img src='images/main-banner-1.png' alt='main-banner' />
       </StoreTitle>
       <StoreContent>
-        <SearchPanel {...{ search, setSearch, tags, setTags }} />
+        <SearchPanel
+          {...{ search, setSearch, tags, setTags, activeTags, setActiveTags }}
+        />
       </StoreContent>
     </Layout>
   );

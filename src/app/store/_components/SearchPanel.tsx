@@ -6,9 +6,19 @@ interface Props {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   tags: string[];
   setTags: React.Dispatch<React.SetStateAction<string[]>>;
+  activeTags: string[];
+  setActiveTags: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const SearchPanel = ({ search, setSearch, tags, setTags }: Props) => {
+const SearchPanel = ({
+  search,
+  setSearch,
+  tags,
+  setTags,
+  activeTags,
+  setActiveTags,
+}: Props) => {
+  const [isTagOpen, setIsTagOpen] = useState<boolean>(false);
   const [isAddTag, setIsAddTag] = useState<boolean>(false);
   const [newTag, setNewTag] = useState<string>('');
 
@@ -40,6 +50,11 @@ const SearchPanel = ({ search, setSearch, tags, setTags }: Props) => {
     setIsAddTag((prev) => !prev);
   };
 
+  const remoteActiveTag = (index: number) => {
+    const newActiveTags = activeTags.filter((_, idx) => idx !== index);
+    setActiveTags(newActiveTags);
+  };
+
   return (
     <SearchPanelContainer>
       <Search>
@@ -48,37 +63,50 @@ const SearchPanel = ({ search, setSearch, tags, setTags }: Props) => {
           value={search}
           onChange={handleChangeSearch}
         />
-        <div>↑</div>
+        <div onClick={() => setIsTagOpen((prev) => !prev)}>태그 열기</div>
         <div>정렬</div>
         <img src='search.svg' alt='search' />
       </Search>
-      <Tag>
-        <TagList>
-          <div className='content'>
-            {!isAddTag ? (
-              <div className='tags'>
-                {tags.map((item, idx) => (
-                  <div key={idx + item} className='tag'>
-                    {item}
-                  </div>
-                ))}
+      {isTagOpen && (
+        <Tag>
+          <TagList>
+            <div className='content'>
+              {!isAddTag ? (
+                <div className='tags'>
+                  {tags.map((item, idx) => (
+                    <div key={idx + item} className='tag'>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <input
+                  placeholder='태그 입력하기'
+                  value={newTag}
+                  onChange={handleChangeNewTag}
+                  onKeyDown={handleKeyDownNewTag}
+                  onContextMenu={handleContextMenuNewTag}
+                />
+              )}
+            </div>
+            <button type='button' onClick={handleClickToggle}>
+              {!isAddTag ? '+ 태그 추가하기' : '+'}
+            </button>
+          </TagList>
+          <ActiveTags>
+            {activeTags.map((item, idx) => (
+              <div key={idx + item}>
+                {item}
+                <img
+                  src='cross.svg'
+                  alt='close'
+                  onClick={() => remoteActiveTag(idx)}
+                />
               </div>
-            ) : (
-              <input
-                placeholder='태그 입력하기'
-                value={newTag}
-                onChange={handleChangeNewTag}
-                onKeyDown={handleKeyDownNewTag}
-                onContextMenu={handleContextMenuNewTag}
-              />
-            )}
-          </div>
-          <button type='button' onClick={handleClickToggle}>
-            {!isAddTag ? '+ 태그 추가하기' : '+'}
-          </button>
-        </TagList>
-        <ActiveTag>활성 태그</ActiveTag>
-      </Tag>
+            ))}
+          </ActiveTags>
+        </Tag>
+      )}
     </SearchPanelContainer>
   );
 };
@@ -203,8 +231,26 @@ const TagList = styled.div`
   }
 `;
 
-const ActiveTag = styled.div`
+const ActiveTags = styled.div`
+  display: flex;
   height: 31px;
+
+  gap: 14px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: #7832b9;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 export default SearchPanel;
