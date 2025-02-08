@@ -2,6 +2,7 @@
 
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import { ColorType, SaturationType } from '../lib/types/colors';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -132,4 +133,9 @@ export const standard = {
       member: 'ine' | 'jingburger' | 'lilpa' | 'jururu' | 'gosegu' | 'viichan'
     ) => `var(--color-isedol-${member})`,
   },
+};
+
+export const standardColor = {
+  color: (color: ColorType, saturation: SaturationType) =>
+    `var(--color-${color}-${saturation})`,
 };
