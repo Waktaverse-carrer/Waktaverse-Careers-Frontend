@@ -1,4 +1,4 @@
-import { SessionProvider } from 'next-auth/react';
+// import { SessionProvider } from 'next-auth/react';
 import styled from 'styled-components';
 
 const Layout = styled.div`
@@ -13,8 +13,11 @@ interface Props {
 
 export default function ({ children }: Props) {
   return (
-    <SessionProvider>
-      <Layout>{children}</Layout>
-    </SessionProvider>
+    <Layout>{children}</Layout>
+
+    // 아래는 NextAuth를 사용한 방법
+    // <SessionProvider>
+    //   <Layout>{children}</Layout>
+    // </SessionProvider>
   );
 }

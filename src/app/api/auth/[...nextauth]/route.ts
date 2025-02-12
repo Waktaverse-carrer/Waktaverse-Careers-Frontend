@@ -3,6 +3,9 @@ import NaverProvider from 'next-auth/providers/naver';
 import GoogleProvider from 'next-auth/providers/google';
 
 /**
+ * 해당 API 라우트는 사용하지 않습니다.
+ * 일단 파일은 남겨둘 예정
+ *
  * 각 플랫폼별 토큰을 추가하면 적용
  */
 export const option: AuthOptions = {

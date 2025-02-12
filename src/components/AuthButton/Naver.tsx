@@ -1,13 +1,13 @@
 'use client';
 
 import styled from 'styled-components';
-import { signIn } from 'next-auth/react';
+// import { signIn } from 'next-auth/react';
 
 const NaverButton: React.FC = () => {
   const onLoginClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    signIn('naver');
+    // signIn('naver');
   };
 
   return (
