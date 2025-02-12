@@ -72,7 +72,7 @@ const data = [
 
 const Contact = () => {
   return (
-    <div style={{ marginTop: '3rem' }}>
+    <div style={{ marginTop: '3rem', height: '100vh' }}>
       <PageTitle>문의</PageTitle>
       <GridContainer>
         {data.map((item, idx) => (
