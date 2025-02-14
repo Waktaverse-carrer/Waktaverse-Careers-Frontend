@@ -7,7 +7,6 @@ const ItemContainer = styled.div`
   flex-direction: column;
   gap: 13px;
   align-items: center;
-  width: 575px;
 `;
 
 const Title = styled.h2`
