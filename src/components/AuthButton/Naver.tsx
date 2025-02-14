@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 // import { signIn } from 'next-auth/react';
 
 const NaverButton: React.FC = () => {
@@ -11,7 +11,7 @@ const NaverButton: React.FC = () => {
   };
 
   return (
-    <Button onClick={onLoginClick} type='button'>
+    <Button onClick={onLoginClick} type="button">
       네이버로 로그인
     </Button>
   );
