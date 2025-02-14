@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import React from 'react';
 
 const ItemContainer = styled.div`
   display: flex;
@@ -31,13 +32,13 @@ interface Props {
   title: string;
   description: string;
   email: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 const ContactItem = ({ title, description, email, icon }: Props) => {
   return (
     <ItemContainer>
-      <Image src={icon} alt={title} width={90} height={90} />
+      {icon}
       <Title>{title}</Title>
       <Description>{description}</Description>
       <Email href={`mailto:${email}`}>{email} →</Email>

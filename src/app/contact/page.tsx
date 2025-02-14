@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import ContactItem from './_components/ContantItem';
+import { ReportIcon, ContactIcon, DataIcon, ProposalIcon } from './_assets';
 
 const PageTitle = styled.h1`
   font-size: 40px;
@@ -45,28 +46,28 @@ const data = [
     description:
       'WAKTAVERSE CAREER 이용 중 문제가 있거나\n저작권, 템플릿에 이상이 있다면 신고해주세요.',
     email: 'report@waktaverse.career',
-    icon: '/images/contact/report.svg',
+    icon: <ReportIcon />,
   },
   {
     title: '기능 제안',
     description:
       'WAKTAVERSE CAREER 서비스에 원하시는\n기능이 있다면 제안해주세요.',
     email: 'proposal@waktaverse.career',
-    icon: '/images/contact/proposal.svg',
+    icon: <ProposalIcon />,
   },
   {
     title: '정보 추가/수정 요청',
     description:
       'WAKTAVERSE CAREER 서비스에서\n누락되거나 오기재된 내용이 있다면 제보해주세요.',
     email: 'data@waktaverse.career',
-    icon: '/images/contact/data.svg',
+    icon: <DataIcon />,
   },
   {
     title: '기타 문의',
     description:
       'WAKTAVERSE CAREER에 궁금한 점이\n있으시면 언제든 문의해주세요.',
     email: 'contact@waktaverse.career',
-    icon: '/images/contact/contact.svg',
+    icon: <ContactIcon />,
   },
 ];
 
