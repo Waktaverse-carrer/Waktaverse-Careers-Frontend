@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-import Layout from './_components/Layout';
 import SearchPanel from './_components/SearchPanel';
 import TemplateStore from './_components/TemplateStore';
 
@@ -37,7 +36,7 @@ const Home = () => {
   );
 
   return (
-    <Layout>
+    <StoreContainer>
       <StoreTitle>
         <div className='text'>템플릿</div>
         <img src='images/main-banner-1.png' alt='main-banner' />
@@ -48,9 +47,11 @@ const Home = () => {
         />
         <TemplateStore {...{ templateList }} />
       </StoreContent>
-    </Layout>
+    </StoreContainer>
   );
 };
+
+const StoreContainer = styled.div``;
 
 const StoreTitle = styled.div`
   display: flex;

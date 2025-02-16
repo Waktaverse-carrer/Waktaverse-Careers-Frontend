@@ -63,9 +63,14 @@ const SearchPanel = ({
           value={search}
           onChange={handleChangeSearch}
         />
-        <div onClick={() => setIsTagOpen((prev) => !prev)}>태그 열기</div>
-        <div>정렬</div>
-        <img src='search.svg' alt='search' />
+        <div onClick={() => setIsTagOpen((prev) => !prev)}>
+          <img src='/icons/store_arrow.svg' alt='arrow' />
+        </div>
+        <div>
+          <img src='/icons/store_hamburger.svg' alt='hamburger' />
+        </div>
+
+        <img src='search.svg' className='search' alt='search' />
       </Search>
       {isTagOpen && (
         <Tag>
@@ -150,7 +155,7 @@ const Search = styled.div`
     height: 53px;
   }
 
-  img {
+  .search {
     position: absolute;
     left: 25px;
     top: 50%;
