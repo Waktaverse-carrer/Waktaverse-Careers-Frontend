@@ -35,17 +35,14 @@ const SearchPanel = ({
       if (!newTag) return;
       setTags((prev) => [...prev, newTag]);
       setNewTag('');
+      setIsAddTag((prev) => !prev);
     }
   };
 
-  const handleContextMenuNewTag = (e: React.MouseEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (!newTag) return;
-    setTags((prev) => [...prev, newTag]);
-    setNewTag('');
-  };
-
   const handleClickToggle = () => {
+    if (isAddTag && newTag) {
+      setTags((prev) => [...prev, newTag]);
+    }
     setNewTag('');
     setIsAddTag((prev) => !prev);
   };
@@ -90,7 +87,6 @@ const SearchPanel = ({
                   value={newTag}
                   onChange={handleChangeNewTag}
                   onKeyDown={handleKeyDownNewTag}
-                  onContextMenu={handleContextMenuNewTag}
                 />
               )}
             </div>
